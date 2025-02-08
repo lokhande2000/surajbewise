@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: white;
+    --foreground: white;
+
+    --primary: white;
+    --primary-foreground: white;
+
+    --secondary: white;
+    --secondary-foreground: white;
+  }
+
+  body {
+    @apply bg-white text-grayVariants-100 font-lato;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.image-slider {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  right: -1%;
+}
+
+.slider-image {
+  position: absolute;
+  object-fit: contain;
+  animation: changeImage 12s linear infinite;
+  transform: scale(1.2);
+}
+
+.slider-image:nth-child(1) {
+  animation-delay: 0s;
+}
+.slider-image:nth-child(2) {
+  animation-delay: 6s;
+}
+
+@keyframes changeImage {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveTopToCenter {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animated-element {
+  animation: moveTopToCenter 1.5s ease-in-out forwards;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
