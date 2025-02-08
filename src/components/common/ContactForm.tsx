@@ -37,7 +37,7 @@ const ContactForm: React.FC<{ text: string; onClose: () => void }> = ({ text, on
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // await submitContactForm(data);
+      await submitContactForm(data);
       setShowToast(true);
 
       setTimeout(() => {

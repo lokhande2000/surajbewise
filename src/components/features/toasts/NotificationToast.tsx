@@ -1,8 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BeWiseTypography from '@/components/common/BeWiseTypography';
 import { TYPOGRAPHY_VARIANT } from '@/lib/constants/typography';
-import { useState, useEffect } from 'react';
 
 interface NotificationToastProps {
   onClose: () => void;
@@ -12,7 +11,7 @@ const NotificationToast: React.FC<NotificationToastProps> = ({ onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 3000); // Auto-close after 3 seconds
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [onClose]);
